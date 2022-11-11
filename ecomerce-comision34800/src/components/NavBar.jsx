@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
@@ -6,25 +7,31 @@ const NavBar = () => {
     <nav>
       <ul class="menu">
         <li class="logo">
-          <a href="#">Margarita.SF</a>
+          <Link to="/" className={({ isActive }) => (isActive ? "bg-red" : "")}>
+            MARGARITA S.F
+          </Link>{" "}
         </li>
         <li class="item">
-          <a href="#">Hamburguesas</a>
+          <Link to="/categoria/Hamburguesas">Hamburguesas</Link>
         </li>
         <li class="item">
-          <a href="#">Wraps</a>
+          <Link
+            to="/categoria/
+          Wraps"
+          >
+            Wraps
+          </Link>
         </li>
         <li class="item">
-          <a href="#">Entrepanes</a>
+          <Link to="/categoria/Entrepanes">Entrepanes</Link>
         </li>
         <li class="item">
-          <a href="#">Fajitas</a>
-        </li>
-        <li class="item">
-          <a href="#">Papas</a>
+          <Link to="CartWidget">
+            {" "}
+            <CartWidget />{" "}
+          </Link>
         </li>
       </ul>
-      <CartWidget />
     </nav>
   );
 };
